@@ -48,6 +48,46 @@
     
     ];
     ?>
+
+
+    <!-- Stampare hotel con i dati disponibili  -->
+
+    <?php
+    var_dump($hotels) . '<br>';
+    ?>
+
+    <!-- Tabella -->
+    <table>
+      <thead>
+        <tr>
+          <th> Name </th>
+          <th> Description </th>
+          <th> Parking </th>
+          <th> Vote </th>
+          <th> Distance to center </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <?php
+          foreach($hotels as $hotel) {
+            $name = $hotel['name'];
+            $description = $hotel['description'];
+            $parking = $hotel['parking'] ? '&check;' : '&cross;';
+            $vote = $hotel['vote'];
+            $distance = $hotel['distance_to_center'];
+
+            echo "<tr>
+                  <td> $name </td>
+                  <td> $description </td>
+                  <td> $parking </td>
+                  <td> $vote </td>
+                  <td> $distance </td>
+                  </tr>";
+          }
+        ?>
+      </tbody>  
+    </table>
     
 </body>
 </html>
